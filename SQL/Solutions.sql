@@ -73,6 +73,8 @@
     D03|PRODUCT|58517.5
     D04|INSURANCE|51913.3333333333
     D05|FINANCE|56660.3333333333
+14)Select the total expense for the department finance
+    
 
 
 /* Your Record Count from the SQL execution */
