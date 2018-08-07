@@ -74,7 +74,28 @@
     D04|INSURANCE|51913.3333333333
     D05|FINANCE|56660.3333333333
 14)Select the total expense for the department finance
+    select sum(salary) from Employee where dep_id = 'D05' group by dep_id;
+    169981
+    record count - 1
+15)Select the department which spends the least with Dept id and Dept manager name
+      
     
-
-
+16)Select the count of Employees in each department
+    select e.dep_id,d.dep_name,count(*) from Employee e inner join Dept d where e.dep_id = d.dep_id group by d.dep_id;
+    D01|HEALTH|6
+    D02|COMMUNICATIONS|6
+    D03|PRODUCT|2
+    D04|INSURANCE|3
+    D05|FINANCE|3
+    record count - 5
+17)Select the count of Employees in each department having salary <10000    
+    select name,dep_id,count(*) from Employee where salary<10000 group by dep_id;
+    Empty Set
+    record count - 0
+18)Select the total number of Employees in Dept id D04
+    select e.dep_id,d.dep_name,count(*) from employee e inner join dept d where e.dep_id=d.dep_id and e.dep_id='D04' ;
+    D04|INSURANCE|3
+    record count - 1
+    
+    
 /* Your Record Count from the SQL execution */
