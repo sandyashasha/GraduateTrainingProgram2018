@@ -97,5 +97,14 @@
     D04|INSURANCE|3
     record count - 1
     
-    
+19)Select all department details of the Department with Maximum Employees
+   select p.dep_id,p.dep_name,k.c1 from(select max(l.count) as c1 from (select e.dep_id,d.dep_name,count(*) as count from employee e inner join dept d where e.dep_id=d.dep_id group by d.dep_id) as l)  as k inner join  (select e.dep_id,d.dep_name,count(*) as count from employee e inner join dept d where e.dep_id=d.dep_id group by d.dep_id) as p where k.c1=p.count ;
+   D01|Health|6
+   D02|COmmunications|6
+   record count-2
+   
+20)Select the Employees who has Tim Cook as their manager
+    select e.name,e.E_Id from Employee e inner join Dept d where e.dep_id = d.dep_id and d.dep_manager = 'Tim Cook';
+    Empty Set 
+    record count - 0
 /* Your Record Count from the SQL execution */
