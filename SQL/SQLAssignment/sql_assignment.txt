@@ -1,0 +1,21 @@
+1) What are the most important sql commands
+  DDL COMMANDS:
+    *CREATE
+    *ALTER
+    *DROP
+    *TRUNCATE
+  
+  DML COMMANDS:
+    *INSERT
+    *UPDATE
+    *DELETE
+  
+  DQL COMMANDS:
+    *SELECT
+  DCL COMMANDS:
+    *GRANT
+    *REVOKE
+  TCL COMMANDS:
+    *ROLLBACK
+    *SAVEPOINT
+    *COMMIT
