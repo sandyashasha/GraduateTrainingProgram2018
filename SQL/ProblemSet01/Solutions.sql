@@ -87,3 +87,9 @@
    PARK PLACE|1267|05-SEP-99|12-SEP-99
    
    record count - 3
+   
+10)What is the number of bookings that started in the month of September?
+    select count(guest_no) from booking where date_from like '%SEP%' and date_to like '%SEP%';
+    4
+    
+    
