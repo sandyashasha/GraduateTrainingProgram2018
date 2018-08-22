@@ -32,7 +32,7 @@
     select column is used to reduce the complexity and for faster execution of Query
 
 4)What is the difference between Where and Having
-    Where is used to match certain condition
+    Where is used to match certain condition in table level
     Having is used to match the condition in Group by result
 
 5)What are the different operators used in Where.difference between And not and OR
