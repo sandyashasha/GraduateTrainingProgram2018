@@ -63,9 +63,18 @@
   Index can be used to speed up the performance. Index is a subset of the table. Index should be unique so that we can't create duplicate index.
   There are two types of index namely,
     *Dense index 
-    *Sparde index
+    *Sparse index
 
 10)What is an view.
-
+  A view is a virtual table based on the result-set of a SQL query
+    E.g create view 'viewname' as 'Query';
 
 11)Specify the different type of joins with an example?
+   Inner Join
+    e.g select tb1.column1,tb2.column2,.., from tablename1 as tb1 inner join tablename2 as tb2 where (on) condition;
+   Left Outer Join 
+    e.g select tb1.column1,tb2.column2,.., from tablename1 as tb1 left outer join tablename2 as tb2 where (on) condition;
+   Right Outer Join
+     e.g select tb1.column1,tb2.column2,.., from tablename1 as tb1 right outer join tablename2 as tb2 where (on) condition;  
+   Full Outer Join
+     e.g select tb1.column1,tb2.column2,.., from tablename1 as tb1 full outer join tablename2 as tb2 where (on) condition;  
