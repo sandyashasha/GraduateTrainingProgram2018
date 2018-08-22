@@ -1,4 +1,5 @@
 1) What are the most important sql commands
+  
   DDL COMMANDS:
     *CREATE
     *ALTER
@@ -23,34 +24,41 @@
     *COMMIT
 
 2)What is an Entity,Attribute,Record,operator
+  
   Entity refers to  the person,place,thing about which data can be stored.
   Attribute refers to the colum in a database table in general.
   Record is also called as Tuples which corresponds to a row in the table.
   Operator is uesd to perform certain operations in the query E.g AND , OR, NOT
   
 3)Why is it essential to select columns in a resultset instead of doing a select *.What is the use of distinct
+    
     select column is used to reduce the complexity and for faster execution of Query
 
 4)What is the difference between Where and Having
+   
     Where is used to match certain condition in table level
     Having is used to match the condition in Group by result
 
 5)What are the different operators used in Where.difference between And not and OR
-    Where uses AND,OR,NOT,assignment operators. AND is used to match all the conditions that where used in Where, OR is used to match one of the given coditions in Where, NOT is used to exclude certain values that are not needed
+   
+   Where uses AND,OR,NOT,assignment operators. AND is used to match all the conditions that where used in Where, OR is used to match one of the given coditions in Where, NOT is used to exclude certain values that are not needed
     
 6)what is the difference between Group by and order by when do we use them
+  
   Group by will aggregate records by the specified column and allows to perform aggregation functions on non grouped columns
   Order by will alter the order of the result which is returned 
 
 7)What is an aggregate function.Specify the different types of aggregate functions
+  
   Aggregate functions are the one in which values of multiple rows are grouped together to form a single value
-  sum
-  min
-  max
-  avg
-  count
+  *sum
+  *min
+  *max
+  *avg
+  *count
   
 8)What is a constraint.What is a primary key,Foreign key?Why do we use them
+  
   Constriant specifies the condition that is used.
   
   Primary key is used to uniquely identifies a record in a table. It can't be null and with any duplicate values.
@@ -60,17 +68,20 @@
   They are used to create a relationship between two tables.
   
 9)What is an index?Why do we use indexing?
+  
   Index can be used to speed up the performance. Index is a subset of the table. Index should be unique so that we can't create duplicate index.
   There are two types of index namely,
     *Dense index 
     *Sparse index
 
 10)What is an view.
+  
   A view is a virtual table based on the result-set of a SQL query
     E.g create view 'viewname' as 'Query';
 
 11)Specify the different type of joins with an example?
-   Inner Join
+   
+  Inner Join
     e.g select tb1.column1,tb2.column2,.., from tablename1 as tb1 inner join tablename2 as tb2 where (on) condition;
    Left Outer Join 
     e.g select tb1.column1,tb2.column2,.., from tablename1 as tb1 left outer join tablename2 as tb2 where (on) condition;
