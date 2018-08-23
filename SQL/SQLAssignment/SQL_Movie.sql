@@ -1,3 +1,6 @@
+ProblemSet<03>, August 17 2018
+ Submission by gokul.velusaamy@accenture.com
+ 
 1) Find the titles of all movies directed by Steven Spielberg. (1 point possible)
 	select title,director from movie where director = 'Steven Spielberg';
 		E.T.|Steven Spielberg
@@ -64,7 +67,9 @@
 		
 		row count - 6
 	
-8)
+8)For each movie, return the title and the 'rating spread', that is, the difference between highest and lowest ratings given to that movie. 
+Sort by rating spread from highest to lowest, then by movie title.
+
 		select mov.title,(max(rat.stars)-min(rat.stars)) as SPREAD from movie as mov inner join rating as rat where mov.mID = rat.mID group by mov.mID order by mov.title;
 			Avatar|2
 			E.T.|1
