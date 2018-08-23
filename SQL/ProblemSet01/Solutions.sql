@@ -1,3 +1,6 @@
+ProblemSet<01>, August 09 2018
+ Submission by gokul.velusaamy
+ 
 1) List full details of all hotels.
     select h.hotel_no,h.name,h.city,r.room_no,r.type from Hotel h inner join Room r where h.hotel_no = r.hotel_no;
     H437|CLAIRMONT HOTEL|BOSTON|223|N
