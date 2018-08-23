@@ -1,5 +1,5 @@
 ProblemSet<03>, August 17 2018
- Submission by gokul.velusaamy@accenture.com
+Submission by gokul.velusaamy@accenture.com
  
 1) Find the titles of all movies directed by Steven Spielberg. (1 point possible)
 	select title,director from movie where director = 'Steven Spielberg';
