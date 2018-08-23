@@ -1,0 +1,35 @@
+1. What is meant by a Working copy in Version control?
+	Working copy is the file that resides in our local repository to which the user will make Git to listen for for staging and changes. These changes can be updated to Git hub repository using commit command.
+
+2.Which Git command is used to create a working copy of a repository on your machine?	
+	  The files in centralized server can be made available as working copy in our local machine using clone or Download command which will download the files from remote repository to our local machine
+
+3. What is the use of the GIT pull command?
+	  Git pull command incorporates changes from remote repository to local repository
+
+4. Which GIT command is used to move an untracked change into the staging area?
+	  git add "filename.extension"
+
+5. How do you set up your SSH key settings in Git hub? What is the use of setting up SSH key?
+	  SSH stands for Secure Shell.
+
+6.What is meant by a Branch in Version control? How do you create a new branch in GIT?
+   When we need to add extra functionality to the code or need to make some changes in it then we begin to create a branch where we can have exact duplicate of source files of master(default branch) and the master remains being untouched. If the edited code in branch gives us successful result then we merge branch in master.
+    command for creatin new branch:  
+    git checkout -b 'branchname'
+    
+7.Which branch gets created by default when you first create a repository in GIT?
+	  MASTER branch
+
+8. Which of these facts about GIT is accurate ; 
+     a) GIT is a centralized  version control tool.    b) Changes made to files in GIT can be reversed by reverting to an earlier version of the file.
+
+     c) GIT cannot be integrated with any other tools in the SDLC  d) GIT is an open-source ,distributed version control tool.
+
+	   Answers : B,D
+
+9.What is the difference between Git and Github?
+	  Git is a version control system, a tool to manage your source code history. GitHub is a hosting service for Git repositories. Git is the tool, GitHub is the service for projects that use Git.
+
+10.What is meant by a repository in version control?
+		Repository is a central storage system. In version control, repository is used to store the source code from where we can pull it, push the  modified code to it and also can create local working copies in machine
