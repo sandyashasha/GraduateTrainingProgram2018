@@ -24,9 +24,9 @@ Submission by gokul.velusaamy@accenture.com
 		row count - 8
 		
 4)Some reviewers didnt provide a date with their rating. Find the names of all reviewers who have ratings with a NULL value for the date. (1 point possible)
-	select r.rID from rating r inner join reviewer rr where r.rID = rr.rID and r.ratingDate is null;
-		202
-		205
+	 select rr.name from rating r inner join reviewer rr  where r.rID = rr.rID and r.ratingDate is null;
+		Daniel Lewis
+		Chris Jackson
 		
 		row count - 2
 		
