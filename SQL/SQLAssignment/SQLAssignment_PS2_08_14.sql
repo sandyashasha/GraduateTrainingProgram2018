@@ -1,5 +1,5 @@
 ProblemSet<02>, August 14 2018
- Submission by gokul.velusaamy@accenture.com
+Submission by gokul.velusaamy@accenture.com
  
 1)Write a valid SQL statement that calculates the total weight of all corn cobs that were picked from the garden:
 	select sum(p.weight) from picked p inner join plant pl where p.plantFK = pl.plantid and pl.plantid = '2';
