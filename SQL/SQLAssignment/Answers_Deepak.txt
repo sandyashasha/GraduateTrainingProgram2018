@@ -1,0 +1,33 @@
+1.What is an Environment?
+	An Environment refers to the collection of resources such as hardware and software that are setup in a way to develop, test, produce and deploy a stable application.
+2.Name different Environment used in Cigna.
+		Development
+		System Testing
+		Integration Testing
+		UAT/PVS
+		Production	
+3.Does different Environment differ. (yes/no with explanation)
+	No, the environment are similar to each other with specifications but differ with their functionalities.
+
+4.Kind’s of test based environment we use in Cigna.
+		Unit Testing
+		System Testing
+		Integration Testing
+		Performance Volume Stress Testing
+		User Acceptance Testing
+5.What is CI?
+	Continuous Integration is a development practice where developers integrate code into a shared repository which will lead to releasable product in a period of time.
+6.What is CD?
+	Continuous delivery is a software development practice where code changes upon continuous integration are automatically built, tested, and prepared for a release to production. 
+7.How CI/CD fits in Agile?
+	In Agile development practice the entire epic is splitted into features and the features are even splitted into tasks and they are done by the team members and team members ensure a relesable piece of product at the end of each sprint. CI/CD also makes the product to be in a relesable state at a particular period of time.
+	E.g Amazon is making changes to production and deploys it for every 11.6 seconds.
+8.What do we mean by building and packaging?
+	Building is the process of converting source code into a stand alone application or making the source to deploy in other envirnments
+	Pckaging is the process of combining the similar codes or files to make the desired output.
+
+9) What is an artifact?
+	An artifact is the tangible by-products produced during the development of software.
+		E.g use cases, class diagrams,UML diagrams
+10) Name some build tools
+			Ant,Maven,Gradle
