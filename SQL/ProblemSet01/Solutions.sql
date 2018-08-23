@@ -95,4 +95,5 @@ ProblemSet<01>, August 09 2018
     select count(guest_no) from booking where date_from like '%SEP%' and date_to like '%SEP%';
     4
     
+    record count - 1
     
