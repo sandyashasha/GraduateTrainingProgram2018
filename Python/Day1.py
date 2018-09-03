@@ -12,6 +12,10 @@ last_name = name[6::]
 print("First Name is %s"%first_name)
 print("Last Name is %s"%last_name)
 print "Age is :",age
+if age > 18:
+	print "He/She is eligible to vote"
+else:
+	print("He/She is not eligible to vote")
 
 #3)Calculating your birth number in numerology
 arr=[]
