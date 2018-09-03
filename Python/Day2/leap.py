@@ -12,5 +12,5 @@ if(year %4 ==0):
 if(flag == 1):
 	print year, " is a Leap year"
 else:
-	print year, " is a not Leap year"
+	print year, " is not a Leap year"
 			
