@@ -1,4 +1,4 @@
-stu_dict = {'student1':[95,85,80],'student2':[100,88,85]}
+stu_dict = {'Gokul':[95,85,80],'Velusaamy':[100,88,85]}
 
 print "Student Name   Total   Average"
 print "=============================="
