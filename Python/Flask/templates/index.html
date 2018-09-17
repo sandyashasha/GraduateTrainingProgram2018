@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Index</title>
+</head>
+<body>
+<form method="POST" action = "http://127.0.0.1:5000/result">
+<center>
+    <table>
+        <tr>
+            <td>
+                Email:
+            </td>
+            <td>
+                <input type="text" name="emailid" id = "emailid">
+            </td>
+            <td style = 'color:{{e_color}}'>
+                {{email_res}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Accenture mail :
+            </td>
+            <td>
+                <input type="email" name="accmail" id = "accmail">
+            </td>
+            <td style = 'color:{{a_color}}'>
+                {{amail_res}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Edu mail :
+            </td>
+            <td>
+                <input type="text" name="edumail" id = "edumail">
+            </td>
+            <td style = 'color:{{edu_color}}'>
+                {{edumail}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Password :
+            </td>
+            <td>
+                <input type="password" name="password" id = "password">
+            </td>
+            <td style = 'color:{{p_color}}'>
+                {{result}}
+            </td>
+        </tr>
+        <tr colspan="2">
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</center>
+</form>
+</body>
+</html>
