@@ -178,3 +178,15 @@
 		Snow White|4.5
 	
 	row count - 1
+20) Find the movie(s) with the lowest average rating. Return the movie title(s) and average rating. (Hint: This query may be more difficult to write in SQLite than other systems; you might think of it as finding the lowest average rating and then choosing the movie(s) with that average rating.) (1 point possible)
+	select Title,min(Ratings) from (select mov.title as Title,avg(rat.stars) as Ratings from Rating as rat inner join Movie as mov on mov.mID = rat.mID group by mov.title having rat.stars = min(rat.stars));
+		E.T.|2.5
+	row count - 1
+	
+21) For each director, return the director's name together with the title(s) of the movie(s) they directed that received the highest rating among all of their movies, and the value of that rating. Ignore movies whose director is NULL. (1 point possible)
+	select mov.director,mov.title,rat.stars from Movie as mov inner join Rating as rat on mov.mID = rat.mID and rat.mID is NOT NULL and mov.director is NOT NULL group by mov.director having rat.stars = max(rat.stars);
+		James Cameron|Avatar|5
+		Robert Wise|The Sound of Music|3
+		Steven Spielberg|Raiders of the Lost Ark|4
+		Victor Fleming|Gone with the Wind|4
+	row count - 4
