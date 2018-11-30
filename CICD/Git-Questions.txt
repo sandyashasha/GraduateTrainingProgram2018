@@ -1,4 +1,6 @@
+
 1. What is meant by a Working copy in Version control?
+
 2. Which Git command is used to create a working copy of a repository on your machine?
 3. What is the use of the GIT pull command?
 4. Which GIT command is used to move an untracked change into the staging area?
