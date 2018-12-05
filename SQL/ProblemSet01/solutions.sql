@@ -1,3 +1,8 @@
+- ProblemSet01, December 5 2018
+--sandya.nandakumar@accenture.com
+
+/* <Question from the ProblemSet 00> */
+
 1)List full details of all hotels.
 
 Select * from hotel;
@@ -89,5 +94,49 @@ Record Count:3
 
 10)What is the number of bookings that started in the month of September?
 Select count(*) from booking where b.date_from like '%SEP%;
+4
+
+Record count:1
+
+11.List the names and cities of guests who began a stay in New York in August.
+ select g.Name,g.City from Guest g inner join Booking b on g.Guest_No=b.Guest_No where b.Hotel_No in (select Hotel_No from Hotel where City='New York') and b.Date_From between '1999-08-01' and '1999-08-31';
+Adam Wayne|Pittsburgh
+Tara Cummings|Baltimore
+
+Record count:2
+
+12.List the hotel names and room numbers of any hotel rooms that have not been booked.
+select h.Name,r.Room_No from Hotel h inner join Room r on h.Hotel_No=r.Hotel_No where r.Room_No not in(select Room_No from Booking);
+Empire Hotel|313
+Park Place|1289
+Brownstone Hotel|876
+Brownstone Hotel|898
+Clairmont Hotel|257
+
+Record count:5
+
+13.List the hotel name and city of the hotel with the highest priced room.
+select h.Name,h.City from Hotel h inner join Room r on h.Hotel_No=r.Hotel_no where r.Price in(select max(Price) from Room);
+
+Park Place|New York
+
+Record count:1
+
+14.List hotel names, room numbers, cities, and prices for hotels that have rooms with prices lower than the lowest priced room in a Boston hotel.
+select h.Name,r.Room_No,h.City,r.Price from hotel h inner join room r on h.Hotel_No=r.Hotel_No where r.price <(select min(r.Price) from Room r inner join Hotel h on h.hotel_No=r.Hotel_No where City='Boston');
+
+Brownstone Hotel|876|Toronto|124.0
+Brownstone Hotel|898|Toronto|124.0
+
+Record count:2
+
+15.List the average price of a room grouped by city.
+select avg(r.price) from Room r inner join Hotel h on r.Hotel_No=h.Hotel_No group by h.City;
+
+155.0
+165.0
+147.0
+
+Record count:3
 
 
