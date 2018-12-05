@@ -16,7 +16,8 @@
     record count - 1
 
 3)Select the Employee who does not have a manager in the department table
-    select * from Employee where Manager_id not in(select E_Id from Employee e inner join Dept d where e.Dep_id = d.Dep_id and e.name = d.Dep_manager);
+    select * from Employee where Manager_id not in(select E_Id from Employee e inner join Dept d where 
+                                                   e.Dep_id = d.Dep_id and e.name = d.Dep_manager);
     A178|BRUCE WILLS|D03|66861|A298
     A120|TIM ARCHER|D01|48834|A298
     A187|ADAM JUSTIN|D02|80543|A298
@@ -92,7 +93,8 @@
     record count - 1
     
 15)Select the department which spends the least with Dept id and Dept manager name
-     select l.DEP_ID,l.Dep_name,l.dep_manager,min(Total) from(select e.dep_id as DEP_ID,d.dep_name as Dep_name,d.dep_manager,total(salary) as Total from employee e inner join dept d where d.dep_id=e.dep_id group by e.dep_id ) as l;
+     select l.DEP_ID,l.Dep_name,l.dep_manager,min(Total) from
+     (select e.dep_id as DEP_ID,d.dep_name as Dep_name,d.dep_manager,total(salary) as Total from employee e inner join dept d where d.dep_id=e.dep_id group by e.dep_id ) as l;
      D03|PRODUCT|BRUCE WILLS|117035.0
      record count - 1
      
@@ -116,7 +118,8 @@
     record count - 1
     
 19)Select all department details of the Department with Maximum Employees
-   select p.dep_id,p.dep_name,k.c1 from(select max(l.count) as c1 from (select e.dep_id,d.dep_name,count(*) as count from employee e inner join dept d where e.dep_id=d.dep_id group by d.dep_id) as l)  as k inner join  (select e.dep_id,d.dep_name,count(*) as count from employee e inner join dept d where e.dep_id=d.dep_id group by d.dep_id) as p where k.c1=p.count ;
+   select p.dep_id,p.dep_name,k.c1 from(select max(l.count) as c1 from 
+                                        (select e.dep_id,d.dep_name,count(*) as count from employee e inner join dept d where e.dep_id=d.dep_id group by d.dep_id) as l)  as k inner join  (select e.dep_id,d.dep_name,count(*) as count from employee e inner join dept d where e.dep_id=d.dep_id group by d.dep_id) as p where k.c1=p.count ;
    D01|Health|6
    D02|COmmunications|6
    record count-2
