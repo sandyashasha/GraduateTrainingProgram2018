@@ -22,5 +22,152 @@ insert into employee values("A111","JOHN HELLEN","D01",15380,"A120");
 insert into employee values("A194","HAROLLD STEVENS","D02",32166,"A187");
 insert into employee values("A133","STEVE MICHELOS","D02",61215,"A187");
 insert into employee values("A156","NICK MARTIN","D03",50174,"A178");
+select*from employee;
+
+A114|MARTIN TREDEAU|D01|54497|A120
+A116|ROBIN WAYNE|D02|20196|A187
+A178|BRUCE WILLS|D03|66861|A298
+A132|PAUL VINCENT|D01|94791|A120
+A198|TOM HANKS|D02|16879|A187
+A120|TIM ARCHER|D01|48834|A298
+A143|BRAD MICHAEL|D01|24488|A120
+A187|ADAM NJUSTIN|D02|80543|A298
+A121|STUART WILLIAM|D02|78629|A187
+A187|ROBERT SWIFT|D04|27700|A298
+A176|EDWARD CANE|D01|898176|A120
+A142|TARA CUMMINGS|D04|99475|A187
+A130|VANESSA PARY|D04|28565|A187
+A128|ADAM WAYNE|D05|94324|A165
+A129|JOSEPH ANGELIN|D05|44280|A165
+A165|NATASHA STEVENS|D05|31377|A298
+A111|JOHN HELLEN|D01|15380|A120
+A194|HAROLLD STEVENS|D02|32166|A187
+A133|STEVE MICHELOS|D02|61215|A187
+A156|NICK MARTIN|D03|50174|A178
+
+create table dept(dep_id varchar(4),depname varchar(19),depmanager varchar(20));
+insert into dept values("d01","health","tim archer");
+insert into dept values("d02","communication","adam justin");
+insert into dept values("d03","product","bruce wills");
+insert into dept values("d01","insurance","robert swift");
+insert into dept values("d01","finance","natasha stefens");
+select * from dept;
+
+d01|health|tim archer
+d02|communication|adam justin
+d03|product|bruce wills
+d01|insurance|robert swift
+d01|finance|natasha stefens
+
+
 
 /* <Question from the ProblemSet> */
+
+1.Select the Employee with the top three salaries
+ select * from EMPLOYEE order by SALARY desc LIMIT 3;
+ A142|TARA CUMMINGS|D04|99475|A187
+ A132|PAUL VINCET|D01|94791|A120
+ A128|ADAM WAYNE|D05|94324|A165
+
+2.Select the Employee with the least salary:
+ select NAME,SALARY from EMPLOYEE where SALARY=(select min(SALARY) from EMPLOYEE);
+ JOHN HELLEN|15380
+
+3.Select the Employee who does not have a manager in the department table:
+ select E_ID,NAME from EMPLOYEE where MANAGER_ID not in (select E_ID from EMPLOYEE);
+ A178|BRUCE WILLS
+ A120|TIM ARCHER
+ A187|ADAM JUSTIN
+ A187|ROBERT SWIFT
+ A165|NATASHA STEVENS
+ 
+4.Select the Employee who is also a Manager:
+ select distinct e1.MANAGER_ID,e2.NAME from EMPLOYEE e1 inner join EMPLOYEE e2 where e1.MANAGER_ID=e2.E_ID;
+ A120|TIM ARCHER
+ A187|ADAM JUSTIN
+ A187|ROBERT SWIFT
+ A165|NATASHA STEVENS
+ A178|BRUCE WILLS
+ 
+5.Select the Employee who is a Manager and has least salary:
+ select min(SALARY),NAME from EMPLOYEE e1 inner join DEPT d1 on d1.DEP_ID=e1.DEP_ID where e1.NAME=d1.DEP_MANAGER;
+ 27700|ROBERT SWIFT
+
+6.Select the total number of Employees in Communications departments
+ select count(*) from EMPLOYEE e1 inner join DEPT d1 on e1.DEP_ID=d1.DEP_ID where DEP_NAME='COMMUNICATIONS';
+ 6
+
+7.Select the Employee in Finance Department who has the top salary
+ select e1.NAME,max(SALARY) from EMPLOYEE e1 inner join DEPT d1 on d1.DEP_ID=e1.DEP_ID where d1.DEP_NAME='FINANCE';
+ ADAM WAYNE|94324
+ 
+8.Select the Employee in product depatment who has the least salary
+  select e1.NAME,min(SALARY) from EMPLOYEE e1 inner join DEPT d1 on d1.DEP_ID=e1.DEP_ID where d1.DEP_NAME='PRODUCT';
+
+9.Select the count of Empolyees in Health with maximum salary
+ select count(*),max(SALARY) from EMPLOYEE e1 inner join DEPT d1 on d1.DEP_ID=e1.DEP_ID where DEP_NAME='HEALTH';
+ 5|94791
+
+10.Select the Employees who report to Natasha Stevens
+  select E_ID,NAME from EMPLOYEE where MANAGER_ID in(select E_ID from EMPLOYEE where NAME='NATASHA STEVENS');
+  A128|ADAM WAYNE
+  A129|JOSEPH ANGELIN
+
+11.Display the Employee name,Dep name,Dept manager in the Health department
+  select e.NAME,d.DEP_NAME,d.DEP_MANAGER from EMPLOYEE e inner join DEPT d on e.DEP_ID=d.DEP_ID where d.DEP_NAME='HEALTH';
+  MARTIN TREDEAU|HEALTH|TIM ARCHER
+  PAUL VINCET|HEALTH|TIM ARCHER
+  BRAD MICHAEL|HEALTH|TIM ARCHER
+  EDWARD CANE|HEALTH|TIM ARCHER
+  JOHN HELLEN|HEALTH|TIM ARCHER
+
+12.Display the Department id,Employee ids and Manager ids for the Communications department
+  select d.DEP_ID,e.E_ID,e.MANAGER_ID from EMPLOYEE e inner join DEPT d on e.DEP_ID=d.DEP_ID where DEP_NAME='COMMUNICATIONS';
+  D02|A116|A187
+  D02|A198|A187
+  D02|A187|A298
+  D02|A121|A187
+  D02|A194|A187
+  D02|A133|A187
+
+13.Select the Average Expenses for Each dept with Dept id and Dept name
+ select avg(SALARY),d.DEP_ID,d.DEP_NAME from EMPLOYEE e inner join DEPT d on e.DEP_ID=d.DEP_ID group by e.DEP_ID;
+ 55666.4|D01|HEALTH
+ 48271.3333333333|D02|COMMUNICATIONS
+ 55289.6666666667|D03|PRODUCT
+ 51913.3333333333|D04|INSURANCE
+ 56660.3333333333|D05|FINANCE
+
+14.Select the total expense for the department finance
+  select sum(SALARY),d.DEP_NAME FROM EMPLOYEE e inner join DEPT d on e.DEP_ID=d.DEP_ID where DEP_NAME='FINANCE';
+  169981|FINANCE
+
+15.Select the department which spends the least with Dept id and Dept manager name
+  select * from DEPT d inner join(select min(s),DEP_ID from (select sum(SALARY) as s,DEP_ID from EMPLOYEE group by DEP_ID)) as t on d.DEP_ID=t.DEP_ID;
+  D04|INSURANCE|ROBERT SWIFT|155740|D04
+
+16.Select the count of Employees in each department
+  select count(*),DEP_ID from EMPLOYEE group by DEP_ID;
+  5|D01
+  6|D02
+  3|D03
+  3|D04
+  3|D05
+
+17.Select the count of Employees in each department having salary <10000
+  select count(*),DEP_ID from EMPLOYEE where SALARY<10000 group by DEP_ID;
+  no record found
+
+18.Select the total number of Employees in Dept id D04
+  select count(*) from EMPLOYEE where DEP_ID='D04' group by DEP_ID;
+  3
+  
+19.Select all department details of the Department with Maximum Employees
+  select * from DEPT d inner join(select max(c),DEP_ID from (select count(E_ID) as c,DEP_ID from EMPLOYEE group by DEP_ID))as t1 on d.DEP_ID=t1.DEP_ID;
+  D02|COMMUNICATIONS|ADAM JUSTIN|6|D02
+
+20.Select the Employees who has Tim Cook as their manager
+  select e.E_ID,e.NAME from EMPLOYEE e inner join DEPT d on e.DEP_ID=d.DEP_ID where d.DEP_MANAGER='TIM COOK';
+  no record found
+
+  
