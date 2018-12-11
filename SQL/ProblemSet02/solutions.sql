@@ -60,20 +60,10 @@ ProblemSet<02>, december 07, 2018
  
  select distinct g.name from gardener g inner join planted pl inner join picked pi on g.gardenerid=pl.gardenerFK and pl.gardenerFK=pi.gardenerFK and pl.plantFK=pi.plantFK and pi.locationFK=pl.locationFK;
  
- row count-2
+ row count-3
  
  Father
  Tim
+ Erin
  
- 10.Create a view that lists all the plant names picked from all locations except ’West’ in the month of August.
-  
- create view picked_plants as select distinct p.name from plant p inner join picked pi on p.plantid=pi.plantFK and pi.locationFK not in (select l.locationid from location l inner join picked pi on l.name='West' and pi.date1 like '%AUG%');
-
- select * from picked_plants;
  
- row count-4
- 
- Carrot
- Corn
- Tomato
- Radish
