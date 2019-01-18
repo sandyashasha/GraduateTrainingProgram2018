@@ -68,6 +68,40 @@ if len(liE)==10:
 elif len(liE)<10:
     print max(liO)
 
+
+or
+
+b=[]
+odd=[]
+for i in range(10):
+   a=int(input("enter a value:")) 
+b.append(a)
+for i in range(10): 
+if(b[i]%2!=0):     
+odd.append(b[i])
+print(b)
+print(odd)
+if not odd: 
+ print("no odd numbers")
+else:
+ print(max(odd))
+
+or
+
+
+s = int(input("enter a value: ")
+num = map(int, s.split())
+liO=[]
+for i in num:
+    if i%2!=0:
+        liO.append(i)
+if not liO:
+	print("no odd numbers")
+else:
+	print(max(liO))
+   
+
+
     //1 3 5 3 6 8 9 1 2 8
       9
 
@@ -80,19 +114,48 @@ b) Suppose the cover price of a book is Rs.24.95, but bookstores get a 40% disco
 Rs.3 for the first copy and 0.75p for each additional copy. What is the total wholesale cost for
 60 copies?
 c) If I leave my house at 6:52 am and run 1 mile at an easy pace (8:15 per mile), then 3 miles at
-tempo (7:12 per mile) and 1 mile at easy pace again, what time do I get home for breakfast?
+tempo (7:12 per mile) and 1 mile at easy pace again, what time do I get home for breakfast? 
+
+A:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+import math
+radius=int(input("Enter the radius"))
+volume=(4.0/3.0)*(math.pi)*(radius**3)
+print(volume)
+
+B:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+MRP=24.95
+Discount=MRP*.40
+Shipping=.75
+No_of_copies=59
+first_copy=Discount+3
+rest_of_the_copy=Discount+.75
+rest_of_the_copy1=rest_of_the_copy*No_of_copies
+total=rest_of_the_copy1+first_copy
+print(total) 
+ 
+
 
 .....................................................................................................................................................
 5.)Write a program that asks the user to enter an integer and prints two integers, root and pwr, such that 0 < pwr < 6 and root**pwr is equal to the integer entered by the user. If no such pair of integers exists, it should print a message to that effect.
-integer = 3
-for power in range(1,6):
-    a = (integer ** (1.0/power))
-    if math.ceil(a) == a:
-        print a, power
 
-//3.0,1
-
-
+num=int(input("enter a number:"))
+for i in range(1,6):
+    root=num**(1/float(i))
+    if(int(root)**i==num):
+        pwr=i
+        print("root is:",root)
+        print("pwr is:",pwr)
+	
+o/p:	
+enter a number:16                                                                                                              
+root is: 16.0                                                                                                                  
+pwr is: 1                                                                                                                      
+root is: 4.0                                                                                                                   
+pwr is: 2                                                                                                                      
+root is: 2.0                                                                             
+pwr is: 4                                                                                                                      
+                                                                                                                              
 .....................................................................................................................................................
 6.)Let s be a string that contains a sequence of decimal numbers separated by commas, e.g., s = '1.23,2.4,3.123'. Write a program that prints the sum of the numbers in s.
 
@@ -121,8 +184,18 @@ x="animal"
 y="panimalar"
 print(isln(x,y))
 
-//True
+or 
 
+a="panimalar"
+b="animal"
+def check(a,b):
+    if(a.find(b)):
+        print("match found")
+    else:
+        print("not found")
+check(a,b)
+
+//True
 
 ....................................................................................................................................................
 
